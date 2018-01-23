@@ -13,7 +13,7 @@ public class BookUi {
 		book.setPress("rmcbs");
 		book.setKcount(200);
 		book.setPrice(23.5);
-		boolean bRet = biz.addBook(book);
+ 		boolean bRet = biz.addBook(book);
 		if(bRet) {
 			System.out.println("successed");
 		}
@@ -22,6 +22,9 @@ public class BookUi {
 		}
 		
 	}
-	public 
+	public static void main(String[] args) {
+		BookUi.addBookTest();
+		System.out.println("program is over");
+	} 
 
 }

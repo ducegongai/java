@@ -14,4 +14,11 @@
 	<natures>
 		<nature>org.eclipse.jdt.core.javanature</nature>
 	</natures>
+	<linkedResources>
+		<link>
+			<name>lib/ojdbc6.jar</name>
+			<type>1</type>
+			<locationURI>PARENT-2-PROJECT_LOC/Desktop/%E5%AE%9E%E8%AE%AD/Java%E9%9B%B6%E5%9F%BA%E7%A1%80%E5%88%B0%E9%A1%B9%E7%9B%AE%E5%AE%9E%E6%88%98%E4%B8%80%E5%91%A8%E5%85%A5%E9%97%A8/3-9/3-9%E8%B5%84%E6%96%99/3-9%E8%B5%84%E6%96%99/ojdbc6.jar</locationURI>
+		</link>
+	</linkedResources>
 </projectDescription>
