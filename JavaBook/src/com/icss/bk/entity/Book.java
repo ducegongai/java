@@ -10,6 +10,7 @@ public class Book {
 	private Date pdate;
 	private double price;
 	private int kcount;
+	private String picurl;
 	
 	
 	public String getIsbn() {
@@ -53,6 +54,12 @@ public class Book {
 	}
 	public void setKcount(int kcount) {
 		this.kcount = kcount;
+	}
+	public String getPicurl() {
+		return picurl;
+	}
+	public void setPicurl(String picurl) {
+		this.picurl = picurl;
 	}
 	
 }
