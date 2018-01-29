@@ -7,7 +7,7 @@ import java.sql.PreparedStatement;
 import com.icss.bk.biz.IRole;
 import com.icss.bk.entity.User;
 
-public class UserDao {
+public class UserDao extends BaseDao{
 	/**
 	 * 用户注册
 	 */
@@ -18,8 +18,7 @@ public class UserDao {
 		try {
 			
 			//打开数据库
-			Class.forName("oracle.jdbc.driver.OracleDriver");//用反射技术，动态加载数据库驱动（不需要new）
-			conn = DriverManager.getConnection("jdbc:oracle:thin:@192.168.1.253:1521:orcl","nmz9","123456");
+			this.openConnection();
 			
 			//create the PreparedStatement object
 			String sql = "insert into tuser values(?,?,?,?)";
@@ -32,7 +31,7 @@ public class UserDao {
 					
 			
 			//关闭数据库		
-			conn.close();
+			this.closeConnection();
 		} catch (Exception e) {
 			// TODO: handle exception
 			e.printStackTrace(); 

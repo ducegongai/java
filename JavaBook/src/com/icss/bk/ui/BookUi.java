@@ -10,9 +10,9 @@ public class BookUi {
 	public static void addBookTest(){
 		BookBiz biz = new BookBiz();
 		Book book = new Book();
-		book.setIsbn("is003"); 
-		book.setBname("红楼梦");
-		book.setAuthor("曹雪芹");
+		book.setIsbn("is004"); 
+		book.setBname("三国演义");
+		book.setAuthor("罗贯中");
 		book.setPress("rmcbs");
 		book.setKcount(100);
 		book.setPdate(new Date());            //当前时间
