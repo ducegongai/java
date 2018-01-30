@@ -1,10 +1,10 @@
 package com.icss.bk.dao;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
+//import java.sql.Connection;
+//import java.sql.DriverManager;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 
-import com.icss.bk.biz.IRole;
 import com.icss.bk.entity.User;
 
 public class UserDao extends BaseDao{
@@ -13,7 +13,7 @@ public class UserDao extends BaseDao{
 	 */
 	public boolean regist(User user) {
 		
-		Connection conn = null;
+		
 		
 		try {
 			
@@ -48,8 +48,31 @@ public class UserDao extends BaseDao{
 	 * @param pwd
 	 * @return
 	 */
-	public User login(String uname,String pwd) {
+	public User login(String uname,String pwd)throws Exception{
+		
 		User user = null;
+		//打开数据库
+		this.openConnection();
+		String sql = "select * from TUSER where uname= ? and pwd= ? ";
+		PreparedStatement ps = this.conn.prepareStatement(sql);
+		ps.setString(1,uname);
+		ps.setString(2, pwd);
+		ps.executeQuery();
+		ResultSet rs = ps.executeQuery();
+		if(rs != null) {
+			while(rs.next()) {
+				user = new User();  //能够进行while循环，说明查询条件找到了满足的结果集
+				
+			}
+		}
+		
+		
+		
+		//关闭数据库 
+		this.closeConnection();
+		
+		
+		/*
 		if(uname.equals("tom")&&pwd.equals("abc")) {
 			user = new User();
 			user.setUname(uname);
@@ -63,10 +86,11 @@ public class UserDao extends BaseDao{
 			user.setAddress("hbsxfs");
 			user.setRole(IRole.ADMIN);
 			
-		}else {
-			
 		}
-		return user;
+		*/
+		return user;	
+	
 	}
+
 
 }

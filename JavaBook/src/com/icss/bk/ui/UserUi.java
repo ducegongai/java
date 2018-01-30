@@ -28,15 +28,24 @@ public class UserUi {
 	
 	public void logintest() {
 		UserBiz biz = new UserBiz();
-		User u = biz.login("tom","abc");
-		if(u == null) {
-			System.out.println("error");
+		try {
+			User u = biz.login("tom","abc");
+			if(u == null) {
+				System.out.println("error");
+			}
+			else
+			{
+				System.out.println(u.getUname() + "--login successfully");
+			}  
+		
+		} catch (Exception e) {
+			e.printStackTrace();
+			System.out.println("Õ¯¬Á“Ï≥£");
 		}
-		else
-		{
-			System.out.println(u.getUname() + "--login successfully");
-		}  
-	}
+			// TODO: handle exception
+		}
+		
+		
 	
 	public static void main(String[] args) {
 		//UserUi ui = new UserUi();

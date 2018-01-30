@@ -30,7 +30,7 @@ public class UserBiz {
 	 */
 	
 	
-	public User login(String uname,String pwd) {	 
+	public User login(String uname,String pwd) throws Exception{	 
 	User user = null;
 	if(uname != null && pwd != null&& !uname.equals("")) {	
 		UserDao dao = new UserDao();
