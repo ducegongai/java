@@ -20,7 +20,7 @@ public class BookDao extends BaseDao{
 	
 	public 	void addBook(Book book)throws SQLIntegrityConstraintViolationException,Exception {
 		
-		Connection conn = null;
+		//Connection conn = null;
 			
 			
 			//打开数据库
@@ -28,7 +28,7 @@ public class BookDao extends BaseDao{
 			
 			//添加图书
 			//String sql = "insert into tbook(isbn,bname,author,price) values(?,?,?,?)";
-			String sql = "insert into tbook（isbn,bname） values('"+ book.getIsbn() +","+ book.getBname() +"')";
+			String sql = "insert into tbook(isbn,bname) values('"+book.getIsbn()+"','"+book.getBname()+"')";
 			Statement st = conn.createStatement(); 
 			st.executeUpdate(sql);
 			//关闭数据库		
